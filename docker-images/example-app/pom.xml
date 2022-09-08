@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>example-app</artifactId>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.seemscloud.urban.example-app</groupId>
+        <artifactId>docker-images</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <docker.buildArg.APP_VERSION>${docker-example-app.version}</docker.buildArg.APP_VERSION>
+        <docker.buildArg.APP_USER>${docker-example-app.user}</docker.buildArg.APP_USER>
+        <docker.buildArg.APP_GROUP>${docker-example-app.group}</docker.buildArg.APP_GROUP>
+        <docker.buildArg.APP_UID>${docker-example-app.uid}</docker.buildArg.APP_UID>
+        <docker.buildArg.APP_GUID>${docker-example-app.guid}</docker.buildArg.APP_GUID>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                        <image>
+                            <alias>example-app</alias>
+                            <name>seemscloud/urban/example-app:${project.version}</name>
+                            <build>
+                                <contextDir>${project.basedir}</contextDir>
+                                <filter>@</filter>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>build docker</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
