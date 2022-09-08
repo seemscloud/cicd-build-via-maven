@@ -24,7 +24,7 @@
 
     <build>
         <plugins>
-<!--            <plugin>-->
+            <!--            <plugin>-->
             <!--                <groupId>org.apache.maven.plugins</groupId>-->
             <!--                <artifactId>maven-antrun-plugin</artifactId>-->
             <!--                <version>1.7</version>-->
@@ -49,8 +49,16 @@
                     <verbose>true</verbose>
                     <images>
                         <image>
-                            <alias>example-app</alias>
-                            <name>seemscloud/urban/example-app:${project.version}</name>
+                            <alias>urban-take-home-application</alias>
+                            <name>theanotherwise/urban-take-home-application:latest</name>
+                            <build>
+                                <contextDir>${project.basedir}</contextDir>
+                                <filter>@</filter>
+                            </build>
+                        </image>
+                        <image>
+                            <alias>urban-take-home-application</alias>
+                            <name>theanotherwise/urban-take-home-application:${project.version}</name>
                             <build>
                                 <contextDir>${project.basedir}</contextDir>
                                 <filter>@</filter>
