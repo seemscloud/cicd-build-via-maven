@@ -14,11 +14,11 @@
         <version>1000-SNAPSHOT</version>
     </parent>
 
-    <scm>
-        <connection>scm:git:git@github.com:theanotherwise/portfolio.git</connection>
-        <developerConnection>scm:git:git@github.com:theanotherwise/portfolio.git</developerConnection>
-        <url>https://github.com/theanotherwise/portfolio</url>
-    </scm>
+    <!--    <scm>-->
+    <!--        <connection>scm:git:git@github.com:theanotherwise/portfolio.git</connection>-->
+    <!--        <developerConnection>scm:git:git@github.com:theanotherwise/portfolio.git</developerConnection>-->
+    <!--        <url>https://github.com/theanotherwise/portfolio</url>-->
+    <!--    </scm>-->
 
     <properties>
         <docker.buildArg.APP_VERSION>${application.version}</docker.buildArg.APP_VERSION>
