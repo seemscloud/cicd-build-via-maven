@@ -3,17 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>docker-images</artifactId>
     <packaging>pom</packaging>
 
+    <artifactId>images</artifactId>
+    <groupId>com.seemscloud.urban.images</groupId>
+
     <parent>
-        <groupId>com.seemscloud.urban.example-app</groupId>
-        <artifactId>seemscloud-urban-example-app</artifactId>
+        <artifactId>take-home</artifactId>
+        <groupId>com.seemscloud.urban.take-home</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <modules>
-        <module>example-app</module>
+        <module>application</module>
     </modules>
 </project>

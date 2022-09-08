@@ -3,22 +3,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>example-app</artifactId>
     <packaging>pom</packaging>
 
+    <artifactId>application</artifactId>
+    <groupId>com.seemscloud.urban.application</groupId>
+
     <parent>
-        <groupId>com.seemscloud.urban.example-app</groupId>
-        <artifactId>docker-images</artifactId>
+        <artifactId>images</artifactId>
+        <groupId>com.seemscloud.urban.images</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <properties>
-        <docker.buildArg.APP_VERSION>${docker-example-app.version}</docker.buildArg.APP_VERSION>
-        <docker.buildArg.APP_USER>${docker-example-app.user}</docker.buildArg.APP_USER>
-        <docker.buildArg.APP_GROUP>${docker-example-app.group}</docker.buildArg.APP_GROUP>
-        <docker.buildArg.APP_UID>${docker-example-app.uid}</docker.buildArg.APP_UID>
-        <docker.buildArg.APP_GUID>${docker-example-app.guid}</docker.buildArg.APP_GUID>
+        <docker.buildArg.APP_VERSION>${example-app.version}</docker.buildArg.APP_VERSION>
+        <docker.buildArg.APP_USER>${example-app.user}</docker.buildArg.APP_USER>
+        <docker.buildArg.APP_GROUP>${example-app.group}</docker.buildArg.APP_GROUP>
+        <docker.buildArg.APP_UID>${example-app.uid}</docker.buildArg.APP_UID>
+        <docker.buildArg.APP_GUID>${example-app.guid}</docker.buildArg.APP_GUID>
     </properties>
 
     <build>
@@ -45,6 +46,13 @@
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>push docker</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>push</goal>
                         </goals>
                     </execution>
                 </executions>

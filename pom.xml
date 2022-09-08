@@ -3,29 +3,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>seemscloud-urban-example-app</artifactId>
     <packaging>pom</packaging>
 
-    <groupId>com.seemscloud.urban.example-app</groupId>
+    <artifactId>take-home</artifactId>
+    <groupId>com.seemscloud.urban.take-home</groupId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <docker-example-app.version>1.0.0</docker-example-app.version>
-        <docker-example-app.user>1.0.0</docker-example-app.user>
-        <docker-example-app.group>1.0.0</docker-example-app.group>
-        <docker-example-app.uid>1.0.0</docker-example-app.uid>
-        <docker-example-app.guid>1.0.0</docker-example-app.guid>
+        <example-app.version>1.0.0</example-app.version>
+        <example-app.user>1.0.0</example-app.user>
+        <example-app.group>1.0.0</example-app.group>
+        <example-app.uid>1.0.0</example-app.uid>
+        <example-app.guid>1.0.0</example-app.guid>
     </properties>
+
+    <modules>
+        <module>images</module>
+    </modules>
 
     <distributionManagement>
         <repository>
-            <id>central</id>
+            <id>container-central</id>
             <url>http://maven.apache.org</url>
         </repository>
     </distributionManagement>
-
-    <modules>
-        <module>docker-images</module>
-    </modules>
 </project>
