@@ -5,25 +5,43 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
-    <artifactId>application</artifactId>
-    <groupId>com.seemscloud.urban.application</groupId>
+    <artifactId>take-home.images.application</artifactId>
+    <groupId>com.seemscloud.urban.take-home.images.application</groupId>
 
     <parent>
-        <artifactId>images</artifactId>
-        <groupId>com.seemscloud.urban.images</groupId>
+        <artifactId>take-home.images</artifactId>
+        <groupId>com.seemscloud.urban.take-home.images</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <properties>
-        <docker.buildArg.APP_VERSION>${example-app.version}</docker.buildArg.APP_VERSION>
-        <docker.buildArg.APP_USER>${example-app.user}</docker.buildArg.APP_USER>
-        <docker.buildArg.APP_GROUP>${example-app.group}</docker.buildArg.APP_GROUP>
-        <docker.buildArg.APP_UID>${example-app.uid}</docker.buildArg.APP_UID>
-        <docker.buildArg.APP_GUID>${example-app.guid}</docker.buildArg.APP_GUID>
+        <docker.buildArg.APP_VERSION>${application.version}</docker.buildArg.APP_VERSION>
+        <docker.buildArg.APP_USER>${application.user}</docker.buildArg.APP_USER>
+        <docker.buildArg.APP_UID>${application.uid}</docker.buildArg.APP_UID>
+        <docker.buildArg.APP_GROUP>${application.group}</docker.buildArg.APP_GROUP>
+        <docker.buildArg.APP_GID>${application.gid}</docker.buildArg.APP_GID>
     </properties>
 
     <build>
         <plugins>
+<!--            <plugin>-->
+            <!--                <groupId>org.apache.maven.plugins</groupId>-->
+            <!--                <artifactId>maven-antrun-plugin</artifactId>-->
+            <!--                <version>1.7</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <phase>validate</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>run</goal>-->
+            <!--                        </goals>-->
+            <!--                        <configuration>-->
+            <!--                            <tasks>-->
+            <!--                                <echoproperties/>-->
+            <!--                            </tasks>-->
+            <!--                        </configuration>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
