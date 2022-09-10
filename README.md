@@ -1,4 +1,4 @@
-# Urban Take Home Application
+# CI/CD Build via Maven
 
 ## For CI / CD process
 
